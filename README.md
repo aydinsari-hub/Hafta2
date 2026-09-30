@@ -32,7 +32,7 @@ Görev gereksinimlerine göre tasarım tamamen öğrenci numarasına (2416501056
 ## 🔗 Canlı Demo
 
 Projenin çalışan canlı haline Vercel üzerinden ulaşabilirsiniz: 
-👉 [Kampüs Etkinlikleri - Vercel Demo](https://hafta2-gamma.vercel.ap)
+👉 [Kampüs Etkinlikleri - Vercel Demo](https://hafta2-gamma.vercel.app)
 
 ## 👨‍💻 Geliştirici
 
