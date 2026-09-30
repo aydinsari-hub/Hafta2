@@ -1,0 +1,157 @@
+/* Aydın Sarı - 2416501056 */
+
+:root {
+  /* Kendi okul numaran */
+  --no: 2416501056; 
+  
+  /* Numaranın 360'a göre modu (2416501056 % 360 = 336) */
+  --ton: 336; 
+  
+  --renk-ana: hsl(var(--ton) 60% 35%);
+  --renk-zemin: hsl(var(--ton) 30% 97%);
+  
+  /* Son hane 6 olduğu için monospace ailesinden Courier New kullanıyoruz */
+  --font: "Courier New", monospace; 
+  
+  --bosluk-m: 1rem; 
+  --hizaa: 0px;
+}
+
+/* Genel Sıfırlamalar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--renk-zemin);
+  color: #333;
+}
+
+/* ----- ÜST BİLGİ VE MENÜ ----- */
+header {
+  background-color: var(--renk-ana);
+  color: white;
+  padding: 1.5rem var(--bosluk-m);
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+main {
+  padding: var(--bosluk-m);
+}
+
+/* ----- TABLODAN KARTA: GRID YAPISI ----- */
+.etkinlikler {
+  display: grid;
+  /* TELEFON ÖNCELİKLİ: Tek sütun */
+  grid-template-columns: 1fr; 
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* GENİŞ EKRAN: Birden fazla sütun (Masaüstü için) */
+@media (min-width: 768px) {
+  .etkinlikler {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  }
+}
+
+/* Kart Tasarımı */
+article.kart {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+article.kart h3 {
+  color: var(--renk-ana);
+  font-size: 1.2rem;
+}
+
+.detay-link {
+  margin-top: auto; 
+  text-decoration: none;
+  color: var(--renk-ana);
+  font-weight: bold;
+  text-align: right; 
+}
+
+
+/* ----- FORM YAPISI ----- */
+.form-alani {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-grup {
+  display: flex;
+  flex-direction: column; 
+}
+
+.form-grup label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+
+.form-grup input,
+.form-grup select,
+.form-grup textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+/* Hatalı (boş bırakılan zorunlu) alan kırmızı */
+.form-grup input:invalid,
+.form-grup select:invalid {
+  border-color: red;
+  box-shadow: 0 0 3px rgba(255, 0, 0, 0.2);
+}
+
+button[type="submit"] {
+  background-color: var(--renk-ana);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-start; 
+}

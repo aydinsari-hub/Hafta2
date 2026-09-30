@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlik Ekle</title>
+    <!-- CSS Dosyanı Bağlıyoruz -->
+    <link rel="stylesheet" href="css/2416501056.css">
+</head>
+<body>
+
+    <!-- MENÜ BÖLÜMÜ -->
+    <header>
+        <h1>Kampüs Etkinlikleri</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa - Etkinlikler</a>
+            <a href="etkinlik-ekle.html">Ekle</a>
+            <a href="etkinlik-guncelle.html">Güncelle</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- EKLEME FORMU -->
+        <section class="form-alani">
+            <h2>Etkinlik Ekle</h2>
+            <!-- "required" (zorunlu) özelliği sayesinde boş bırakılırsa CSS'teki kırmızı çerçeve kuralı çalışacak -->
+            <form action="#" method="POST">
+                
+                <div class="form-grup">
+                    <label for="ad">Etkinlik Adı</label>
+                    <input type="text" id="ad" name="ad" placeholder="Kariyer Günleri 2026" required>
+                </div>
+                
+                <div class="form-grup">
+                    <label for="kategori">Kategori</label>
+                    <select id="kategori" name="kategori" required>
+                        <option value="">Seçiniz</option>
+                        <option value="seminer">Seminer</option>
+                        <option value="atolye">Atölye</option>
+                        <option value="soylesi">Söyleşi</option>
+                    </select>
+                </div>
+
+                <div class="form-grup">
+                    <label for="tarih">Tarih</label>
+                    <!-- Kullanıcı boş bırakmayı denediğinde (örneğin Slayt 5'teki gibi) çerçeve kırmızı olacak -->
+                    <input type="date" id="tarih" name="tarih" required>
+                </div>
+
+                <div class="form-grup">
+                    <label for="aciklama">Açıklama</label>
+                    <!-- Açıklama genellikle zorunlu değildir, bu yüzden 'required' eklemedik -->
+                    <textarea id="aciklama" name="aciklama" rows="3" placeholder="Etkinlik hakkında detaylar..."></textarea>
+                </div>
+
+                <button type="submit">Kaydet</button>
+            </form>
+        </section>
+    </main>
+    
+    <!-- Alt Bilgi (Footer) -->
+    <footer style="text-align: center; padding: 2rem; color: #666; font-size: 0.9rem;">
+        <hr style="margin-bottom: 1rem; border: none; border-top: 1px solid #ddd;">
+        <p>Aydın Sarı - 2416501056</p>
+    </footer>
+
+</body>
+</html>
