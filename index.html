@@ -1,58 +1,37 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kampüs Etkinlikleri</title>
-    <!-- CSS bağlantısı -->
-    <link rel="stylesheet" href="css/2416501056.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kampüs Etkinlikleri - Ana Sayfa</title>
+  <link rel="stylesheet" href="./css/2416501056.css">
+  <script type="module" src="./js/event-list.js"></script>
 </head>
 <body>
+  <header class="ust-bilgi">
+    <div class="kapsayici">
+      <h1>Kampüs Etkinlikleri</h1>
+      <p>Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
+      <nav class="ana-menu">
+        <a href="index.html" class="aktif">Ana Sayfa</a>
+        <a href="etkinlikler.html">Etkinlikler</a>
+        <a href="etkinlik-ekle.html">Ekle</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- MENÜ BÖLÜMÜ -->
-    <header>
-        <h1>Kampüs Etkinlikleri</h1>
-        <nav>
-            <a href="index.html">Ana Sayfa - Etkinlikler</a>
-            <a href="etkinlik-ekle.html">Ekle</a>
-            <a href="etkinlik-guncelle.html">Güncelle</a>
-        </nav>
-    </header>
+  <main class="kapsayici">
+    <section>
+      <h2>Yaklaşan 2 Etkinlik</h2>
+      <section id="etkinlik-listesi" class="etkinlik-listesi" data-limit="2"></section>
+      <div style="margin-top: 24px;">
+        <a href="etkinlikler.html" class="btn">Tüm etkinlikleri gör</a>
+      </div>
+    </section>
+  </main>
 
-    <main>
-        <!-- SADECE ETKİNLİK KARTLARI BURADA KALDI -->
-        <h2>Yaklaşan Etkinlikler</h2>
-        <section class="etkinlikler">
-            
-            <article class="kart">
-                <h3>Kariyer Günleri</h3>
-                <p><strong>Kategori:</strong> Seminer</p>
-                <p><strong>Tarih:</strong> 12 Ekim</p>
-                <!-- Detay sayfanıza giden link de güncellendi -->
-                <a href="etkinlik-detay.html" class="detay-link">Detayları gör &rarr;</a>
-            </article>
-
-            <article class="kart">
-                <h3>Robotik Atölyesi</h3>
-                <p><strong>Kategori:</strong> Atölye</p>
-                <p><strong>Tarih:</strong> 20 Ekim</p>
-                <a href="#" class="detay-link">Detayları gör &rarr;</a>
-            </article>
-            
-            <article class="kart">
-                <h3>Siber Güvenlik</h3>
-                <p><strong>Kategori:</strong> Söyleşi</p>
-                <p><strong>Tarih:</strong> 27 Ekim</p>
-                <a href="#" class="detay-link">Detayları gör &rarr;</a>
-            </article>
-
-        </section>
-    </main>
-
-    <footer style="text-align: center; padding: 2rem; color: #666; font-size: 0.9rem;">
-        <hr style="margin-bottom: 1rem; border: none; border-top: 1px solid #ddd;">
-        <p>Aydın Sarı - 2416501056</p>
-    </footer>
-
+  <footer class="alt-bilgi">
+    <p>Aydın · 2416501056 · 2026</p>
+  </footer>
 </body>
 </html>

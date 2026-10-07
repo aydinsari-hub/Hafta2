@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tüm Etkinlikler</title>
+  <link rel="stylesheet" href="css/2416501056.css">
+  <script type="module" src="js/event-list.js"></script>
+</head>
+<body>
+  <header class="ust-bilgi">
+    <div class="kapsayici">
+      <h1>Tüm Etkinlikler</h1>
+      <p>Ekim ayında kampüste düzenlenen etkinlikler.</p>
+      <nav class="ana-menu">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="etkinlikler.html" class="aktif">Etkinlikler</a>
+        <a href="etkinlik-ekle.html">Ekle</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="kapsayici">
+    <form id="filtre-formu" class="filtre-kutusu">
+      <div class="filtre-alan">
+        <label for="arama">Etkinlik ara</label>
+        <input type="search" id="arama" placeholder="Örn. atölye, kariyer">
+      </div>
+      <div class="filtre-alan">
+        <label for="kategori-filtre">Kategori</label>
+        <select id="kategori-filtre">
+          <option value="">Tümü</option>
+        </select>
+      </div>
+    </form>
+
+    <p id="sonuc" class="sonuc-bilgi"></p>
+
+    <section id="etkinlik-listesi" class="etkinlik-listesi"></section>
+  </main>
+
+  <footer class="alt-bilgi">
+    <p>Aydın · 2416501056 · 2026</p>
+  </footer>
+</body>
+</html>

@@ -1,23 +1,13 @@
-/* Aydın Sarı - 2416501056 */
-
 :root {
-  /* Kendi okul numaran */
-  --no: 2416501056; 
-  
-  /* Numaranın 360'a göre modu (2416501056 % 360 = 336) */
-  --ton: 336; 
-  
-  --renk-ana: hsl(var(--ton) 60% 35%);
-  --renk-zemin: hsl(var(--ton) 30% 97%);
-  
-  /* Son hane 6 olduğu için monospace ailesinden Courier New kullanıyoruz */
-  --font: "Courier New", monospace; 
-  
-  --bosluk-m: 1rem; 
-  --hizaa: 0px;
+  --ana-yesil: #167a32;
+  --koyu-yesil: #0e5622;
+  --acik-yesil: #e6f4ea;
+  --hata-kirmizi: #b3261e;
+  --hata-arkaplan: #fdf2f2;
+  --kenarlik: #dadce0;
+  --metin-koyu: #202124;
 }
 
-/* Genel Sıfırlamalar */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,133 +15,337 @@
 }
 
 body {
-  font-family: var(--font);
-  background-color: var(--renk-zemin);
-  color: #333;
+  background-color: #f8fafc;
+  color: var(--metin-koyu);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
 }
 
-/* ----- ÜST BİLGİ VE MENÜ ----- */
-header {
-  background-color: var(--renk-ana);
+/* Slayttaki Serif Başlıklar */
+h1, h2, h3 {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.kapsayici {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+/* Üst Başlık ve Menü */
+.ust-bilgi {
+  background-color: var(--ana-yesil);
   color: white;
-  padding: 1.5rem var(--bosluk-m);
+  padding: 28px 0 24px 0;
 }
 
-header h1 {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+.ust-bilgi h1 {
+  color: white;
+  font-size: 2.1rem;
+  margin-bottom: 6px;
 }
 
-nav {
+.ust-bilgi p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+.ana-menu {
   display: flex;
-  flex-wrap: wrap; 
-  gap: 1rem;
+  gap: 8px;
 }
 
-nav a {
+.ana-menu a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 
-main {
-  padding: var(--bosluk-m);
+.ana-menu a.aktif {
+  background: white;
+  color: var(--ana-yesil);
+  font-weight: 700;
 }
 
-/* ----- TABLODAN KARTA: GRID YAPISI ----- */
-.etkinlikler {
+main h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Kart Izgarası */
+.etkinlik-listesi {
   display: grid;
-  /* TELEFON ÖNCELİKLİ: Tek sütun */
-  grid-template-columns: 1fr; 
-  gap: 1.5rem;
-  margin-top: 1rem;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
-/* GENİŞ EKRAN: Birden fazla sütun (Masaüstü için) */
 @media (min-width: 768px) {
-  .etkinlikler {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  .etkinlik-listesi {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-/* Kart Tasarımı */
-article.kart {
-  background-color: white;
-  border: 1px solid #ddd;
-  padding: 1rem;
+.kart {
+  background: white;
+  border: 1px solid var(--kenarlik);
+  border-top: 4px solid var(--ana-yesil);
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 10px;
 }
 
-article.kart h3 {
-  color: var(--renk-ana);
-  font-size: 1.2rem;
+.kart h2 {
+  font-size: 1.3rem;
+  margin-bottom: 2px;
 }
 
-.detay-link {
-  margin-top: auto; 
+.etiket {
+  background: var(--acik-yesil);
+  color: var(--ana-yesil);
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.kart p {
+  font-size: 0.95rem;
+  color: #3c4043;
+}
+
+/* Slayttaki "Detayları gör" linki (Buton değil, link) */
+.kart a {
+  color: var(--ana-yesil);
+  font-weight: 700;
   text-decoration: none;
-  color: var(--renk-ana);
-  font-weight: bold;
-  text-align: right; 
+  margin-top: auto;
+  padding-top: 10px;
+  display: inline-block;
 }
 
+.kart a:hover {
+  text-decoration: underline;
+}
 
-/* ----- FORM YAPISI ----- */
-.form-alani {
-  background-color: white;
-  padding: 1.5rem;
+/* Genel Buton (Tümünü gör, Kaydet vs.) */
+.btn {
+  background-color: var(--ana-yesil);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: var(--koyu-yesil);
+}
+
+/* Filtre Formu (Arama ve Kategori) */
+.filtre-kutusu {
+  background: white;
+  border: 1px solid var(--kenarlik);
   border-radius: 8px;
-  border: 1px solid #ddd;
-  max-width: 500px;
-  margin-bottom: 2rem;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
-form {
+@media (min-width: 768px) {
+  .filtre-kutusu {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.filtre-alan label, .form-grup label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: var(--metin-koyu);
+}
+
+.filtre-alan input, .filtre-alan select,
+.form-grup input, .form-grup select, .form-grup textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #70757a;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  background-color: white;
+}
+
+.filtre-alan input:focus, .filtre-alan select:focus,
+.form-grup input:focus, .form-grup select:focus, .form-grup textarea:focus {
+  border-color: var(--ana-yesil);
+}
+
+.sonuc-bilgi {
+  color: var(--ana-yesil);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 14px 0 20px 0;
+}
+
+/* Hata Durumları */
+[aria-invalid="true"] {
+  border-color: var(--hata-kirmizi) !important;
+  background-color: var(--hata-arkaplan) !important;
+}
+
+.hata-metin {
+  color: var(--hata-kirmizi);
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+  font-weight: 500;
+}
+
+/* Form Altı Mesaj Kutuları */
+.hata-kutusu {
+  border: 1.5px solid var(--hata-kirmizi);
+  background-color: var(--hata-arkaplan);
+  color: #851310;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-top: 24px;
+  font-weight: 500;
+  max-width: 600px;
+}
+
+.basari-kutusu {
+  border: 2px solid var(--ana-yesil); /* Slayttaki Yeşil Çerçeve */
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 24px;
+  max-width: 600px;
+}
+
+.basari-kutusu-baslik {
+  color: var(--ana-yesil);
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.basari-kutusu pre {
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--metin-koyu);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* Detay Sayfası Tasarımı */
+.detay-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .detay-layout {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.afis-kutu {
+  background-color: #121c2d;
+  color: #fff;
+  border: 2px solid #e28743;
+  padding: 55px 20px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.afis-kutu h2 {
+  color: white;
+  font-size: 1.7rem;
+  margin-bottom: 12px;
+}
+
+.afis-kutu p {
+  color: #e28743;
+  font-size: 1rem;
+}
+
+.afis-alti {
+  display: block;
+  font-style: italic;
+  margin: 6px 0 20px 0;
+  color: #5f6368;
+}
+
+.aciklama-bolumu {
+  margin-bottom: 24px;
+}
+
+.detay-butonlar {
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  gap: 12px;
+}
+
+.kunye-kutusu {
+  background: white;
+  border: 1px solid var(--kenarlik);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.kunye {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 24px;
+}
+
+.kunye dt {
+  font-weight: 700;
+  color: var(--metin-koyu);
+}
+
+.kunye dd {
+  color: #3c4043;
+}
+
+/* Form Sayfası (Ekle/Güncelle) */
+.form-aciklama {
+  color: #5f6368;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.form-kapsayici {
+  max-width: 600px;
 }
 
 .form-grup {
-  display: flex;
-  flex-direction: column; 
+  margin-bottom: 20px;
 }
 
-.form-grup label {
-  font-size: 0.9rem;
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-  color: #444;
-}
-
-.form-grup input,
-.form-grup select,
-.form-grup textarea {
-  padding: 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: inherit;
-}
-
-/* Hatalı (boş bırakılan zorunlu) alan kırmızı */
-.form-grup input:invalid,
-.form-grup select:invalid {
-  border-color: red;
-  box-shadow: 0 0 3px rgba(255, 0, 0, 0.2);
-}
-
-button[type="submit"] {
-  background-color: var(--renk-ana);
-  color: white;
-  border: none;
-  padding: 0.8rem;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  align-self: flex-start; 
+/* Alt Bilgi */
+.alt-bilgi {
+  text-align: center;
+  padding: 30px;
+  color: #70757a;
+  border-top: 1px solid var(--kenarlik);
+  margin-top: 50px;
+  font-size: 0.95rem;
 }
